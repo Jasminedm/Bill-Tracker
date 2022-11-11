@@ -28,7 +28,7 @@
   background-size: cover;
 }
 .header{
-  
+    background-color: #03598d;
 }
 
 .jumbotron{
@@ -41,8 +41,9 @@ svg{
   color: white;
 }
 
-h2{
-  margin-top: 20%;
+.tableInput{
+  background: transparent;
+  border: none;
 }
 
 .billSect{
@@ -50,4 +51,17 @@ h2{
 }
 li{
   list-style-type: none;
+}
+/* icon */
+.material-symbols-outlined {
+  font-size: 15px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' 0,
+  'opsz' 20
+}
+
+.profileBillAlert{
+  text-align: center;
 }

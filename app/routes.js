@@ -1,4 +1,4 @@
-module.exports = function (app, passport, db) {
+module.exports = function (app, passport, db, ObjectId) {
   // normal routes ===============================================================
 
   // show the home page (will also have our login links)
@@ -59,10 +59,10 @@ module.exports = function (app, passport, db) {
     );
   });
 
-  app.put("/messages", (req, res) => {
+  app.put("/edit", (req, res) => {
     console.log(req.body);
-    db.collection("messages").findOneAndUpdate(
-      { name: req.body.name, msg: req.body.msg },
+    db.collection("bills").findOneAndUpdate(
+      {_id: ObjectId(req.body.id)},
       {
         $set: {
           thumbUp: req.body.thumbUp + 1,
@@ -82,7 +82,7 @@ module.exports = function (app, passport, db) {
   
   app.delete("/billList", (req, res) => {
     db.collection("bills").findOneAndDelete(
-      { user: req.user.local.email, company: req.body.company, date: req.body.date, due: req.body.due},
+      { _id: ObjectId(req.body.id)},
       (err, result) => {
         if (err) return res.send(500, err);
         res.send("Message deleted!");
