@@ -1,3 +1,4 @@
+const ObjectId = require("mongodb").ObjectId;
 module.exports = function (app, passport, db, ObjectId) {
   // normal routes ===============================================================
 
@@ -19,8 +20,6 @@ module.exports = function (app, passport, db, ObjectId) {
         })
     })
       });
-  
-
   // LOGOUT ==============================
   app.get("/mybills", isLoggedIn, function (req, res) {
     db.collection('bills').find({user: req.user.local.email}).toArray((err, result) => {
@@ -67,15 +66,15 @@ module.exports = function (app, passport, db, ObjectId) {
   app.put("/edit", (req, res) => {
     console.log(req.body);
     db.collection("bills").findOneAndUpdate(
-      {_id: ObjectId(req.body.id)},
+      {_id: ObjectId(req.body._id)},
       {
         $set: {
-          thumbUp: req.body.thumbUp + 1,
+          due: req.body.updateTxt
         },
       },
       {
-        sort: { _id: -1 },
-        upsert: true,
+        sort: { _id: -1 }
+        
       },
       (err, result) => {
         if (err) return res.send(err);
