@@ -3,29 +3,29 @@
 .indexBody{
   padding-top:80px;
   word-wrap:break-word;
-  background-image: url('img/oveerlookphoto.jpg');
+  /* background-image: url('img/oveerlookphoto.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
 }
 .loginBody{
   padding-top:80px;
   word-wrap:break-word;
-  background-image: url('img/black\ couple.jpeg');
+  /* background-image: url('img/black\ couple.jpeg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
 }
 .signupBody{
   padding-top:80px;
   word-wrap:break-word;
-  background-image: url('img/couplebeeach.jpg');
+  /* background-image: url('img/couplebeeach.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
 }
 .header{
     background-color: #03598d;
@@ -48,6 +48,8 @@ svg{
 
 .billSect{
   text-align: center;
+  padding: 0% 10% 0% 10%;
+  
 }
 li{
   list-style-type: none;

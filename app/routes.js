@@ -11,12 +11,11 @@ module.exports = function (app, passport, db, ObjectId) {
   app.get("/profile", isLoggedIn, function (req, res) {
     db.collection('bills').find({user: req.user.local.email}).toArray((err, result) => {
       if (err) return console.log(err)
-      result = result.sort((a,b) => Date.parse(b.date) - Date.parse(a.date))
+      result = result.sort((a,b) => Date.parse(a.date) - Date.parse(b.date))
       displayResult = [result[0]]
         res.render('profile.ejs', {
           results: displayResult,
-          user : req.user
-
+          user : req.user,
         })
     })
       });
@@ -26,7 +25,7 @@ module.exports = function (app, passport, db, ObjectId) {
       if (err) return console.log(err)
       console.log(result[0])
       //result = result.sort((a,b)=>a.date.getDate()-b.date.getDate());
-      result = result.sort((a,b) => Date.parse(b.date) - Date.parse(a.date)) 
+      result = result.sort((a,b) => Date.parse(a.date) - Date.parse(b.date)) 
       res.render('mybills.ejs', {
           results: result,
           user : req.user

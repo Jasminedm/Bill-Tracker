@@ -9,7 +9,7 @@ let txtEdit = document.getElementsByClassName("material-symbols-outlined")
           const amountInput = e.target.parentNode.childNodes[0]
           console.log(e.target.parentNode.childNodes[0])
           amountInput.focus()
-          amountInput.addEventListener('keyup', txtEdt)
+          amountInput.addEventListener('change', txtEdt)
         })
       })
 
